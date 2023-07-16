@@ -1,0 +1,25 @@
+.navbar{
+    padding: 0px;
+    margin: 25px;
+    height: 60px;
+    width: 100%;
+    font-size: 50px !important;
+    position: fixed;
+    top: 0px;
+    z-index: 1000;
+}
+
+.navbar img {
+    display: flex;
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+}
+
+.navbar p {
+    margin: 0px;
+    padding: 0px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #000;
+}
