@@ -33,7 +33,7 @@ Route::get('/mostrar', [CrudController::class, 'show']);
 //     $candidato -> sobrenome = $informacoes -> sobrenome;
 //     $candidato -> email = $informacoes -> email;
 //     $candidato -> telefone = $informacoes -> telefone;
-//     $candidato -> save();
+//     $candidato -> save();git 
 //     return redirect('/', 201);
 
 //     Candidato::create([
