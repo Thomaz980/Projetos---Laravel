@@ -67,8 +67,10 @@ class CrudController extends Controller
 
     }
 
-    public function delete($id)
+    public function destroy($id)
     {
+        Candidato::findOrFail($id)->delete();
 
+        return redirect('/mostrar');
     }
 }
