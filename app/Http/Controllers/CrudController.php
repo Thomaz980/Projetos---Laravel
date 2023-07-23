@@ -62,9 +62,17 @@ class CrudController extends Controller
 //     return view('show', ['candidato' => $candidato]);
     }
 
-    public function update($id)
+    public function edit($id)
     {
+        $candidato = Candidato::findOrFail($id);
+        return view('edit', ['candidato' => $candidato]);
+        // return view('edit', ['candidato' =>$candidato]);
+    }
 
+    public function update(Request $request)
+    {
+        Candidato::findOrFail($request -> id)->update($request -> all());
+        return redirect('/mostrar')->with('status', 'Cadastro atualizado com sucesso!');
     }
 
     public function destroy($id)

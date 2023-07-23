@@ -27,6 +27,7 @@
             <li>Email: {{ $can['email']}}</li>
             <li>Telefone: {{ $can['telefone']}}</li>
             <li><a href="/deletar/{{$can['id']}}">Excluir: {{$can['id']}}</a></li>
+            <li><a href="/editar/{{$can['id']}}">Editar: {{$can['id']}}</a></li>
         </ul>
     @endforeach
 

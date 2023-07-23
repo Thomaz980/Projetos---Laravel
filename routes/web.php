@@ -21,4 +21,6 @@ Route::get('/', function()
 Route::get('/', [CrudController::class, 'index']);
 Route::post('/cadastro', [CrudController::class, 'store']);
 Route::get('/mostrar', [CrudController::class, 'show']);
-Route::get('/deletar/{id}', [CrudController::class, 'destroy']);
+Route::get('/deletar/{id}', [CrudController::class, 'destroy']); //->middleware('auth');
+Route::get('/editar/{id}', [CrudController::class, 'edit']); //->middleware('auth');
+Route::put('/update/{id}', [CrudController::class, 'update']);
