@@ -2,22 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Chirp;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\View;
-use Illuminate\Support\Facades\DB;
-use App\Models\User;
-use Illuminate\Support\Facades\DB;
 
-class Dados extends Controller
+class ChirpController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $users = DB::select('select * from users where active = ?' [1]);
-        return view('users', ['users' => $users]);
+        //
     }
 
     /**
@@ -25,7 +21,7 @@ class Dados extends Controller
      */
     public function create()
     {
-
+        //
     }
 
     /**
@@ -33,17 +29,13 @@ class Dados extends Controller
      */
     public function store(Request $request)
     {
-        $user  = User::create([
-            'name' => $request->input('name'),
-            'email' => $request->input('email')
-        ]);
-
+        //
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Chirp $chirp)
     {
         //
     }
@@ -51,7 +43,7 @@ class Dados extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Chirp $chirp)
     {
         //
     }
@@ -59,7 +51,7 @@ class Dados extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Chirp $chirp)
     {
         //
     }
@@ -67,9 +59,8 @@ class Dados extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Chirp $chirp)
     {
         //
     }
-
 }

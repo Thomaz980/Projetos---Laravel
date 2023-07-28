@@ -4,23 +4,47 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
-use Illuminate\Support\Facades\Schema;
-use App\Http\Controllers\Dados;
-use Illuminate\Support\Facades\Artisan;
-use Illuminate\Http\Request;
-use App\Models\Candidato;
-use App\Http\Controllers\CadastroController;
-use Illuminate\Http\Response;
-use App\Http\Controllers\CrudController;
 
-Route::get('/', function()
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| contains the "web" middleware group. Now create something great!
+|
+*/
+
+Route::get('/', function () {
+    return Inertia::render('Welcome', [
+        'canLogin' => Route::has('login'),
+        'canRegister' => Route::has('register'),
+        'laravelVersion' => Application::VERSION,
+        'phpVersion' => PHP_VERSION,
+    ]);
+});
+
+Route::get('/dashboard', function () {
+    return Inertia::render('Dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
+
+require __DIR__.'/auth.php';
+
+Route::get('/teste', function()
 {
-    return view('welcome');
-})->name('inicio');
+    // Página vite
+    return Inertia::render('Teste');
+});
 
-Route::get('/', [CrudController::class, 'index']);
-Route::post('/cadastro', [CrudController::class, 'store']);
-Route::get('/mostrar', [CrudController::class, 'show']);
-Route::get('/deletar/{id}', [CrudController::class, 'destroy']); //->middleware('auth');
-Route::get('/editar/{id}', [CrudController::class, 'edit']); //->middleware('auth');
-Route::put('/update/{id}', [CrudController::class, 'update']);
+Route::get('/users', function()
+{
+    // Página vite
+    return Inertia::render('Users');
+});

@@ -3,11 +3,7 @@
 </script>
 
 <template>
-    <ul>
-        <li>
-            <a href="{{ route('teste') }}">Home</a>
-        </li>
-    </ul>
+    <h1>OI</h1>
 </template>
 
 <style scoped>

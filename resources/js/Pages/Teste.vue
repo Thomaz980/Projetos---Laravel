@@ -1,11 +1,10 @@
 <script>
-    //importe as dependencias do vu
-    import { Navbar } from "vue";
+    import Navbar from "@/Components//Navbar.vue";
 </script>
 
 <template>
-    <h1>Olá</h1>
     <Navbar />
+    <h1>Olá</h1>
 </template>
 
 <style scoped>
