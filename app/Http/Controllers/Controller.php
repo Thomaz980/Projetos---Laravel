@@ -17,5 +17,8 @@ class Controller extends BaseController
         $strigDeConsulta = $request->fullUrl();
         $method = $request->method();
         $input = $request->all();
+
+        $input = $request->input('name'); // método recupere valores de toda a carga útil da solicitação (incluindo a string de consulta)
+        $inputAll = $request->query('name'); // método recuperará apenas valores da string de consulta
     }
 }
