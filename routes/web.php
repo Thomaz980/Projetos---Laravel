@@ -19,8 +19,18 @@ use App\Http\Controllers\ChirpController;
 */
 
 Route::get('/', function(){
-  return view('aplicacao');
+  $viewData = [];
+  $viewData["title"] = "Home Page - Online Store";
+  return view('home.index')->with("viewData", $viewData);
 });
+
+
+
+
+
+
+
+
 
 Route::get('/inertia', function () {
     return Inertia::render('Welcome', [
