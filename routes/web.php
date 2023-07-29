@@ -4,8 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
-use App\Http\Controllers\ChirpController;
-
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,13 +17,8 @@ use App\Http\Controllers\ChirpController;
 |
 */
 
-Route::get('/', function(){
-  $viewData = [];
-  $viewData["title"] = "Home Page - Online Store";
-  return view('home.index')->with("viewData", $viewData);
-});
-
-
+Route::get('/', [HomeController::class, 'index'])->name("home.index");
+Route::get('/about', [HomeController::class, 'about'])->name("home.about");
 
 
 
