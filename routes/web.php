@@ -18,7 +18,11 @@ use App\Http\Controllers\ChirpController;
 |
 */
 
-Route::get('/', function () {
+Route::get('/', function(){
+  return view('aplicacao');
+});
+
+Route::get('/inertia', function () {
     return Inertia::render('Welcome', [
         'canLogin' => Route::has('login'),
         'canRegister' => Route::has('register'),
@@ -41,6 +45,6 @@ require __DIR__.'/auth.php';
 
 Route::resource('chirps', ChirpController::class)
     ->only(['index', 'store'])
-    ->middleware(['auth', 'verifield']);
+    ->middleware(['auth']);
 
 require __DIR__.'/auth.php';
