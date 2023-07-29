@@ -30,7 +30,5 @@
             <li><a href="/editar/{{$can['id']}}">Editar: {{$can['id']}}</a></li>
         </ul>
     @endforeach
-
-
 </body>
 </html>

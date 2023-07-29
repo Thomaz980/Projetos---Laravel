@@ -36,15 +36,3 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
-
-Route::get('/teste', function()
-{
-    // Página vite
-    return Inertia::render('Teste');
-});
-
-Route::get('/users', function()
-{
-    // Página vite
-    return Inertia::render('Users');
-});
