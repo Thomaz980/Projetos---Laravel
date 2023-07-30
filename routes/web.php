@@ -18,15 +18,19 @@ use App\Http\Controllers\CustosController;
 */
 
 Route::get('/', [CustosController::class, 'index'])->name('inicio');
+
 Route::post('/registro', [CustosController::class, 'store'])->name('registro');
-Route::post('/editar', function()
-{
-    return view('editar');
-})->name('atualização');
-Route::get('/editar/{id}', [CustosController::class, 'update'])->name('editar');
-Route::get('/deletar/{id}', [CustosController::class, 'update'])->name('deletar');
+
+Route::get('/editar/{id}', [CustosController::class, 'edit'])->name('atualização');
+
+Route::put('/editar', [CustosController::class, 'update'])->name('editar');
+
+Route::get('/deletar/{id}', [CustosController::class, 'destroy'])->name('deletar');
+
 Route::get('/mostrar', [CustosController::class, 'show'])->name('mostrar');
+
 Route::get('/login', function()
 {
     return view('login');
 })->name("login");
+

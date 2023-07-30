@@ -43,9 +43,23 @@ class CustosController extends Controller
         return view('welcome', ['custos' => $custos]);
     }
 
+    public function edit($id)
+    {
+        $custo = Custo::findOrFail($id);
+        return view('edit', ['custo' => $custo]);
+    }
+
     public function update(Request $request)
     {
-        Custo::findOrFail($request->id)->update($request->all());
+        $id = $request->input('id');
+        $custo = Custo::findOrFail($id);
+
+        $custo->nome = $request->input('nome');
+        $custo->tipo = $request->input('tipo');
+        $custo->valor = $request->input('valor');
+        $custo->data = $request->input('data');
+        $custo->descricao = $request->input('descricao');
+        $custo->save();
         return redirect('mostrar')->with('success', 'Custo atualizado com sucesso!');
     }
 

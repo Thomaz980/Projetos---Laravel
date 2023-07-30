@@ -4,40 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    {{-- linkar css --}}
-    <link rel="stylesheet" href="{{asset('css/mostrar.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/mostrar.css') }}">
     <title>Controlador de Custos</title>
-
-<style>
-    body{
-        background-color: #f5f5f5;
-    }
-
-    form{
-        margin-top: 50px;
-        display: flex;
-        align-items: center;
-    }
-
-    table{
-        margin-top: 50px;
-        width: 100%;
-        border-collapse: collapse;
-        border: 1px solid #000;
-        font-size: 18px;
-    }
-    td, li {
-        border: 1px solid #000;
-        padding: 5px;
-    }
-</style>
 </head>
 <body>
+    <h1>Controlador de Custos</h1>
     <form action="{{route("registro")}}" method="post">
         @csrf
         <input type="text" name="nome" placeholder="Gasto">
         <input type="text" name="valor" placeholder="Valor">
-        <input type="text" name="tipo" placeholder="Tipo de Gasto">
+        <select id="tipo" name="tipo">
+            <option disabled selected>Tipo de Entrada</option>
+            <option value="Entrada">Entrada</option>
+            <option value="Saída">Saída</option>
+        </select>
         <input type="date" name="data" placeholder="Data de Referência">
         <input type="text" name="descricao" placeholder="Descrição">
         <button type="submit">Registrar</button>
@@ -62,11 +42,10 @@
                 <td>{{$custo['tipo']}}</td>
                 <td>{{$custo['data']}}</td>
                 <td>{{$custo['descricao']}}</td>
-                <td><a href="/editar">Editar</a></td>
+                <td><a href="/editar/{{$custo['id']}}">Editar</a></td>
                 <td><a href="/deletar/{{$custo['id']}}">Deletar</a></td>
             </tr>
         @endforeach
     </Table>
-
 </body>
 </html>

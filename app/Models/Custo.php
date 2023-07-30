@@ -9,5 +9,5 @@ class Custo extends Model
 {
     use HasFactory;
 
-    protected $custos = ['nome', 'valor','tipo', 'data', 'descricao'];
+    protected $fillable = ['nome', 'valor','tipo', 'data', 'descricao'];
 }
