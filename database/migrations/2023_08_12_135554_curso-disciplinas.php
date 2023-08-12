@@ -11,15 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        // Schema::create('curso_disciplina', function(Blueprint $table){
-        //     $table->id();
-        //     $table->unsignedBigInteger('curso_id');
-        //     $table->unsignedBigInteger('disciplina_id');
-        //     $table->timestamps();
+        Schema::create('curso_disciplinas', function(Blueprint $table){
+            $table->id();
+            $table->unsignedBigInteger('curso_id');
+            $table->unsignedBigInteger('disciplina_id');
+            $table->timestamps();
 
-        //     $table->foreign('curso_id')->references('id')->on('curso');
-        //     $table->foreign('disciplina_id')->references('id')->on('disdciplina');
-        // });
+            $table->foreign('curso_id')->references('id')->on('cursos');
+            $table->foreign('disciplina_id')->references('id')->on('disciplinas');
+        });
     }
 
     /**
@@ -27,7 +27,7 @@ return new class extends Migration
      */
     public function down(): void
     {
-        // Schema::dropIfExist('curso_disciplina');
+        Schema::dropIfExist('curso_disciplinas');
     }
 };
 
