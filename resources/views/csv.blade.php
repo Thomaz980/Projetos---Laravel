@@ -7,13 +7,10 @@
     <title>Mostrar Dados</title>
 </head>
 <body>
-    @foreach($custos as $custo)
+    @foreach($record as $rec)
         <ul>
-            <li>Nome: {{$custo['nome']}}</li>
-            <li>Valor: {{$custo['valor']}}</li>
-            <li>Tipo: {{$custo['tipo']}}</li>
-            <li>Data: {{$custo['data']}}</li>
-            <li>Descrição: {{$custo['descricao']}}</li>
+            <li>Nome: {{$rec['nome']}}</li>
+            <li>Email: {{$rec['email']}}</li>
         </ul>
     @endforeach
 </body>

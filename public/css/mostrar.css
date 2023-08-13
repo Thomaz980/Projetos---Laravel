@@ -50,6 +50,7 @@ form select{
     background-color:#f9f9f9;
 }
 
+
 table{
     /* Quebre a tabela ao diminuir a tela */
     overflow-x: auto;

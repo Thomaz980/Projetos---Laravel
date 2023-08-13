@@ -23,6 +23,13 @@
         <button type="submit">Registrar</button>
     </form>
 
+    {{-- <h2>Caso queira insira aqui seu arquivo CSV</h2>
+    <form action="{{route("csv")}}" method="post">
+        @csrf
+        <input type="file" enctype="multipart/form-data" name="csv">
+        <button type="submit">Enviar</button>
+    </form> --}}
+
     {{-- <form action="{{route("pesquisa")}}" method="post"> --}}
 
     <Table>
