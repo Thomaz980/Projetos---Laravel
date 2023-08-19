@@ -50,12 +50,12 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Session File Location
-    |--------------------------------------------------------------------------
+    | Localização do arquivo de sessão
+    | ------------------------------------------------------------------------------
     |
-    | When using the native session driver, we need a location where session
-    | files may be stored. A default has been set for you but a different
-    | location may be specified. This is only needed for file sessions.
+    |Ao usar o driver de sessão nativa, precisamos de um local onde sessões
+    |Os arquivos podem ser armazenados.Um padrão foi definido para você, mas para um diferente
+    |A localização pode ser especificada.Isso é necessário apenas para sessões de arquivo.
     |
     */
 
